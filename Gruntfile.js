@@ -39,6 +39,12 @@ module.exports = function(grunt) {
         cwd: 'src/',
         src: '**/*.css',
         dest: 'dist/'
+      },
+      readme: {
+        expand: true,
+        cwd: 'src/',
+        src: 'index.md',
+        dest: '/'
       }
     },
     markdown: {
@@ -70,8 +76,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', [
-    'clean:dist', 
-    'copy:dist', 
+    'clean:dist',
+    'copy:dist',
     'markdown'
   ]);
 
